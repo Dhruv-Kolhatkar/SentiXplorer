@@ -1,0 +1,19 @@
+{% extends 'realworld/base.html' %} 
+{% load static %}
+
+{% block content%}
+<div class="container">
+    <h3 class="mt-5 mb-5" style="text-align: center;">Product Analyser (Amazon)</h3>
+    <p>{{ note }}</p>
+    <form action = "{% url "product analysis" %}" method = "post">
+        {% csrf_token %}
+        <div class="container" style="width: 100%;">
+          <label for = "blogname">Product URL</label>
+          <br>
+          <input class="form-control form-control-lg" id = "blogname" type="text" name="blogname">
+          <br>
+          <button class="btn btn-primary btn-lg" style="display: flex; align-items: center; justify-content: center;" type ="submit">Submit</button>
+      </div>
+    </form>
+</div>
+{% endblock %}

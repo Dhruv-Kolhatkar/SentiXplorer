@@ -1,0 +1,39 @@
+{% extends 'realworld/base.html' %} 
+{% load static%}
+
+{% block content%}
+<div class="container">
+  <h3 class="mt-5 mb-5" style="text-align: center;">ERROR</h3>
+  <div style="margin-left: 20%; font-size: 24px">
+    <br>
+  <p>Please check your input, seems like you have entered something wrong.</p>
+  <br>
+    <p>Thanks!!</p>
+  <img height="500px" width="500px" src="../../media/error.jpeg" style="margin-left: 20%;">
+</div>
+      </div>
+    </div>
+  </form>
+</div>
+<script>
+  function startLoading() {
+    // Get the button and the loading spinner elements
+    const button = document.getElementById('submit');
+    const loadingSpinner = document.getElementById('loadingSpinner');
+
+    // Toggle the "button--loading" class on the button
+    button.classList.toggle('button--loading');
+
+    // Show the loading spinner
+    loadingSpinner.style.display = 'block';
+
+    // Simulate a 5-second loading delay
+    setTimeout(function() {
+        // Hide the loading spinner
+        loadingSpinner.style.display = 'none';
+        // Remove the "button--loading" class to return the button to its original state
+        button.classList.remove('button--loading');
+    }, 51000); // 5 seconds in milliseconds
+  }
+</script> 
+{% endblock %}
